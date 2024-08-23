@@ -1,7 +1,7 @@
 import { BiRightArrowAlt } from "react-icons/bi"; 
 import React from 'react'
 import './Home.css'
-import { Link  } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import axios from "axios";
 import { useEffect , useState } from "react";
@@ -19,7 +19,6 @@ import "react-multi-carousel/lib/styles.css";
 const Home = () => {
 
     
-
     const [t] = useTranslation()
     const [products , setproducts] = useState([])
 
@@ -80,10 +79,12 @@ const Home = () => {
             <div className="trending-products-wrapper">
             {
                 products.slice(0,7).map(product =>
-                    <div key={product.id} className="trending-product">
+                    <Link  key={product.id} to={`/singlepage/${product.id}`}>
+                    <div className="trending-product">
                         <img className="trending-product-img" src={product.images[0]} alt="" />
                         <Link to={`/singlepage/${product.id}`} className="trending-product-title">{product.title}</Link>
                     </div>
+                    </Link>
                 )
             }
             </div>
@@ -108,10 +109,12 @@ const Home = () => {
             <Carousel  responsive={responsive}>
                 {
                     products.map( product =>
-                        <div onClick={() => window.location.href = `/singlepage/${product.id}`} key={product.id} className="todays-deals-product">
+                        <Link key={product.id} to={`/singlepage/${product.id}`}>
+                        <div className="todays-deals-product">
                             <img className="todays-deals-img" src={product.images[0]} alt="" />
                             <i className="todays-deals-price">${product.price}</i>
                         </div>
+                        </Link>
                     )
                 }
             </Carousel>

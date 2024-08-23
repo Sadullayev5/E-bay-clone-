@@ -63,7 +63,7 @@
 
 .banner-btn{
     width: 100%;
-    max-width: 124px;
+    max-width: 164px;
     padding: 10px;
     display: flex;
     align-items: center;
@@ -98,6 +98,10 @@
     margin-block: 50px;
     display: flex;
     gap: 20px;
+}
+
+.trending-products-wrapper a{
+    text-decoration: none;
 }
 
 .trending-product-img{
