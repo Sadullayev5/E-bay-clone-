@@ -6,7 +6,6 @@ import axios from "axios";
 import './singlepage.css'
 
 const SinglePage = () => {
-
   const id = useParams().id
 
   const [t] = useTranslation();
