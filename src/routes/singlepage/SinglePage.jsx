@@ -3,7 +3,7 @@ import React, { useEffect , useState } from 'react'
 import { Link , useParams } from 'react-router-dom'
 import { useTranslation } from "react-i18next";
 import axios from "axios";
-import './SinglePage.css'
+import './singlepage.css'
 
 const SinglePage = () => {
 
